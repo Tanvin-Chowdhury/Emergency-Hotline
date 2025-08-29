@@ -1,7 +1,10 @@
 1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
 getElementById("uniqueId"): When know the exact unique ID. then finds by getElementById("uniqueId")
+
 getElementsByClassName("class"): This tag finds all elements with a certain class name
+
 querySelector: This tag finds the first element that matches a CSS selector(like .class, #id, div p)
+
 querySelectorAll: This tag grab all the elements
 
 2. How do you **create and insert a new element into the DOM**?
