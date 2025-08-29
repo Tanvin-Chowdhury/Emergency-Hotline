@@ -33,18 +33,18 @@
 
     <title>Emergency Service Hotline</title>
 </head>
-<body class="hind-madurai">
+<body class="hind-madurai max-w-[1920px]">
 
     <!-- header -->
     <header class="header bg-white w-full hind-madurai">
-        <nav class="nav-bar flex justify-between items-center">
+        <nav class="nav-bar flex justify-between items-center mt-[20px] ml-[60px] mb-[20px] mr-[60px]">
             <!-- left corner -->
-            <div class="flex justify-center items-center gap-[10px] mt-[25px] ml-[60px] mb-[25px] w-[195px] max-h-[50px]">
+            <div class="flex justify-center items-center gap-[10px] w-[195px] max-h-[50px]">
                 <img src="assets/logo.png" class="w-[60px] h-[60px]" alt="">
                 <h1 class="text-[#006747] hind-madurai-bold text-[22px]">Emergency Service</h1>
             </div>
             <!-- right corner -->
-            <div class="flex justify-center items-center gap-[15px] w-[400px] h-[52px] mr-[60px] mt-[24px] mb-[24px]">
+            <div class="flex justify-center items-center gap-[15px] w-[400px] h-[52px]">
                 <div class="bg-[#41ff6b1a] gap-2 p-[10px] rounded-full w-[123px] flex justify-center items-center">
                     <span id="heart-count">0</span>
                     <img src="assets/heart.png" alt="heart-icon" class="w-[30px] h-[30px]">
@@ -54,7 +54,7 @@
                     <img src="assets/coin.png" alt="coin-icon" class="w-[30px] h-[30px]">
                 </div>
                 <div class="bg-[#00A63E] gap-2 rounded-full flex w-[130px] h-[52px] justify-center items-center">
-                    <span>0</span>copy
+                    <span id="copy-count">0</span>copy
                 </div>
             </div>
         </nav>
@@ -69,7 +69,7 @@
 
     <!-- second section -->
     <section class="bg-[#f5fff6]">
-        <div class=" grid grid-cols-4 grid-rows-3 gap-[25px] p-12">
+        <div class=" grid grid-cols-4 grid-rows-3 gap-[30px] p-10">
             <!-- 1st -->
             <div class="national-emergency-number w-[437px] h-[360px] rounded-lg bg-white shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)] p-[32px]">
                 <div class="flex items-center justify-between mb-[16px]">
@@ -80,12 +80,12 @@
                 </div>
                 <div class="national-emergency-number-details">
                     <h1 class="hind-madurai-bold text-[24px]">National Emergency Number</h1>
-                    <p class="roboto text-[#5C5C5C] text-[18px]">National Emergency</p>
-                    <h3 class="mt-[24px] mb-[2px] text-[#111111] font-bold text-[28px]">999</h3>
+                    <p id="emergency-title" class="roboto text-[#5C5C5C] text-[18px]">National Emergency Service</p>
+                    <h3 id="emergency-title1" class="mt-[24px] mb-[2px] text-[#111111] font-bold text-[28px]">999</h3>
                     <button class="bg-[#F2F2F2] pl-[16px] pr-[16px] py-[6px] rounded-full mb-[24px]">All</button>
                     <div class="roboto">
-                        <button class="bg-white border border-gray-300 text-[#5C5C5C] rounded-lg w-[180px] h-[40px] mr-1"><i class="fa-regular fa-copy mr-[5px]"></i>Copy</button>
-                        <button class="bg-[#00A63E] text-white rounded-lg w-[180px] h-[40px]"><i class="fa-solid fa-phone mr-[5px]"></i>Call</button>
+                        <button id="national-copy-btn" class="bg-white border border-gray-300 text-[#5C5C5C] rounded-lg w-[180px] h-[40px] mr-1"><i class="fa-regular fa-copy mr-[5px]"></i>Copy</button>
+                        <button id="national-call-btn" class="bg-[#00A63E] text-white rounded-lg w-[180px] h-[40px]"><i class="fa-solid fa-phone mr-[5px]"></i>Call</button>
                     </div>
                 </div>
             </div>
@@ -131,20 +131,19 @@
             </div>
 
             <!-- 4th special -->
-            <div class="call history row-span-3 w-[400px] rounded-lg bg-white shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)] p-[32px]">
+            <div id="call-history" class="call history row-span-3 w-[400px] rounded-lg bg-white shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)] p-[20px]">
                 <div class="flex items-center justify-between mb-[16px]">
                     <h3 class="roboto font-medium text-[20px]"><i class="fa-solid fa-clock-rotate-left mr-[8px] text-[#5C5C5C]"></i>Call History</h3>
                     <button class="bg-[#00A63E] text-white rounded-full w-[114px] h-[52px]">Clear</button>
                 </div>
 
-                <div class="rounded-[8px] p-4 flex justify-between items-center bg-[rgba(250,250,250,1)]">
+                <!-- <div class="rounded-[8px] p-4 flex justify-between items-center bg-[rgba(250,250,250,1)]">
                     <div>
                         <h3 class="inter text-[18px] font-semibold">Fire service number</h3>
                         <p class="hind-madurai-regular text-[18px] text-[#5C5C5C]">999</p>
                     </div>
                     <p class="hind-madurai-regular text-[18px]">11:36:59 AM</p>
-
-                </div>
+                </div> -->
             </div>
 
             <!-- 4th -->
@@ -270,5 +269,6 @@
         </div>
     </section>
 
+    <script src="script.js"></script>
 </body>
 </html>
