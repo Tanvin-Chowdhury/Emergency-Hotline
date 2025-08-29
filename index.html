@@ -37,9 +37,9 @@
 
     <!-- header -->
     <header class="header bg-white w-full hind-madurai">
-        <nav class="nav-bar flex justify-between items-center mt-[20px] ml-[60px] mb-[20px] mr-[60px]">
+        <nav class="nav-bar flex flex-col md:flex-row justify-between items-center mt-[20px] ml-[60px] mb-[20px] mr-[60px]">
             <!-- left corner -->
-            <div class="flex justify-center items-center gap-[10px] w-[195px] max-h-[50px]">
+            <div class="flex  justify-center items-center gap-[10px] w-[195px] max-h-[50px]">
                 <img src="assets/logo.png" class="w-[60px] h-[60px]" alt="">
                 <h1 class="text-[#006747] hind-madurai-bold text-[22px]">Emergency Service</h1>
             </div>
@@ -69,7 +69,7 @@
 
     <!-- second section -->
     <section class="bg-[#f5fff6]">
-        <div class=" grid grid-cols-4 grid-rows-3 gap-[30px] p-10">
+        <div class=" grid grid-cols-1 grid-rows-auto gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-3 lg:gap-[30px] lg:p-10">
             <!-- 1st -->
             <div class="national-emergency-number w-[437px] h-[360px] rounded-lg bg-white shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)] p-[32px]">
                 <div class="flex items-center justify-between mb-[16px]">
@@ -131,10 +131,10 @@
             </div>
 
             <!-- 4th special -->
-            <div id="call-history" class="call history row-span-3 w-[400px] rounded-lg bg-white shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)] p-[20px]">
+            <div id="call-history" class="call history row-span-3 w-[400px] rounded-lg bg-white shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)] p-[20px] order-1 sm:order-none">
                 <div class="flex items-center justify-between mb-[16px]">
                     <h3 class="roboto font-medium text-[20px]"><i class="fa-solid fa-clock-rotate-left mr-[8px] text-[#5C5C5C]"></i>Call History</h3>
-                    <button class="bg-[#00A63E] text-white rounded-full w-[114px] h-[52px]">Clear</button>
+                    <button id="clear-btn" class="bg-[#00A63E] text-white rounded-full w-[114px] h-[52px]">Clear</button>
                 </div>
 
                 <!-- <div class="rounded-[8px] p-4 flex justify-between items-center bg-[rgba(250,250,250,1)]">

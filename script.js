@@ -59,7 +59,7 @@ document.getElementById('national-call-btn').addEventListener('click', function(
         historyEntry.className = "call history-class";
 
         historyEntry.innerHTML = `
-            <div class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
+            <div id="clear" class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
                 <div>
                     <h3 class="inter font-semibold">${emergencyTitle}</h3>
                     <p class="hind-madurai-regular text-[#5C5C5C]">${emergencyNumber}</p>
@@ -132,7 +132,7 @@ document.getElementById('police-call-btn').addEventListener('click', function(){
         historyEntry.className = "call history-class";
 
         historyEntry.innerHTML = `
-            <div class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
+            <div id="clear" class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
                 <div>
                     <h3 class="inter font-semibold">${policeTitle}</h3>
                     <p class="hind-madurai-regular text-[#5C5C5C]">${policeNumber}</p>
@@ -205,7 +205,7 @@ document.getElementById('fire-call-btn').addEventListener('click', function(){
         historyEntry.className = "call history-class";
 
         historyEntry.innerHTML = `
-            <div class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
+            <div id="clear" class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
                 <div>
                     <h3 class="inter font-semibold">${fireTitle}</h3>
                     <p class="hind-madurai-regular text-[#5C5C5C]">${fireNumber}</p>
@@ -257,7 +257,6 @@ document.getElementById('ambulance-call-btn').addEventListener('click', function
     const ambulanceTitle = document.getElementById("ambulance-title").innerText;
     const ambulanceNumber = document.getElementById("ambulance-title1").innerText;
 
-
     if(balance <= 0){
         alert("You don't have sufficient balance. To make a call you need atleast 20 coins ");
         return;
@@ -278,7 +277,7 @@ document.getElementById('ambulance-call-btn').addEventListener('click', function
         historyEntry.className = "call history-class";
 
         historyEntry.innerHTML = `
-            <div class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
+            <div id="clear" class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
                 <div>
                     <h3 class="inter font-semibold">${ambulanceTitle}</h3>
                     <p class="hind-madurai-regular text-[#5C5C5C]">${ambulanceNumber}</p>
@@ -349,7 +348,7 @@ document.getElementById('women-call-btn').addEventListener('click', function(){
         historyEntry.className = "call history-class";
 
         historyEntry.innerHTML = `
-            <div class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
+            <div id="clear" class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
                 <div>
                     <h3 class="inter font-semibold">${womenTitle}</h3>
                     <p class="hind-madurai-regular text-[#5C5C5C]">${womenNumber}</p>
@@ -360,6 +359,78 @@ document.getElementById('women-call-btn').addEventListener('click', function(){
         const callHistoryContainer = document.getElementById('call-history');
         callHistoryContainer.appendChild(historyEntry);
 });
+
+
+//anti-corruption
+//-----------------------
+
+//heart 
+document.getElementById('heart-icon-anti').addEventListener('click', function(){
+
+    const heartIcon = document.querySelector('#heart-icon-anti i');
+    heartIcon.className = 'fa-solid fa-heart text-red-500';
+
+    heartCount += 1;
+    document.getElementById('heart-count').innerText = heartCount;
+});
+
+//copy 
+document.getElementById('anti-copy-btn').addEventListener('click', function () {
+    const textToCopy = document.getElementById('anti-title1').innerText;
+
+    let copyCount = parseInt(document.getElementById('copy-count').innerText);
+    
+    const tempInput = document.createElement('input');
+    tempInput.value = textToCopy;
+    document.body.appendChild(tempInput);
+
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+
+    alert(`Copied: ${textToCopy}`);
+
+    copyCount += 1;
+    document.getElementById('copy-count').innerText = copyCount;
+});
+
+//balance 
+document.getElementById('anti-call-btn').addEventListener('click', function(){
+    const antiTitle = document.getElementById("anti-title").innerText;
+    const antiNumber = document.getElementById("anti-title1").innerText;
+
+    if(balance <= 0){
+        alert("You don't have sufficient balance. To make a call you need atleast 20 coins ");
+        return;
+    }
+    
+        alert("Calling"+" "+antiTitle+" "+antiNumber+"...");
+        balance = balance - 20;
+        document.getElementById('balance').innerText = balance;
+        
+        //call history
+        const callHistoryTitle = document.getElementById('call-history-title');
+        const callHistoryDescription = document.getElementById('call-history-description');
+        const localTime = document.getElementById('local-time');
+
+        const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit'});
+
+        const historyEntry = document.createElement('div');
+        historyEntry.className = "call history-class";
+
+        historyEntry.innerHTML = `
+            <div id="clear" class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
+                <div>
+                    <h3 class="inter font-semibold">${antiTitle}</h3>
+                    <p class="hind-madurai-regular text-[#5C5C5C]">${antiNumber}</p>
+                </div>
+                <p class="hind-madurai-regular ml-[3px]">${timeString}</p>
+            </div>
+            `;
+        const callHistoryContainer = document.getElementById('call-history');
+        callHistoryContainer.appendChild(historyEntry);
+});
+
 
 
 //electricity
@@ -420,7 +491,7 @@ document.getElementById('electricity-call-btn').addEventListener('click', functi
         historyEntry.className = "call history-class";
 
         historyEntry.innerHTML = `
-            <div class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
+            <div id="clear" class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
                 <div>
                     <h3 class="inter font-semibold">${electricityTitle}</h3>
                     <p class="hind-madurai-regular text-[#5C5C5C]">${electricityNumber}</p>
@@ -472,8 +543,6 @@ document.getElementById('brac-call-btn').addEventListener('click', function(){
     const bracTitle = document.getElementById("brac-title").innerText;
     const bracNumber = document.getElementById("brac-title1").innerText;
 
-    console.log('clicked');
-
     if(balance <= 0){
         alert("You don't have sufficient balance. To make a call you need atleast 20 coins ");
         return;
@@ -494,7 +563,7 @@ document.getElementById('brac-call-btn').addEventListener('click', function(){
         historyEntry.className = "call history-class";
 
         historyEntry.innerHTML = `
-            <div class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
+            <div id="clear" class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
                 <div>
                     <h3 class="inter font-semibold">${bracTitle}</h3>
                     <p class="hind-madurai-regular text-[#5C5C5C]">${bracNumber}</p>
@@ -505,7 +574,6 @@ document.getElementById('brac-call-btn').addEventListener('click', function(){
         const callHistoryContainer = document.getElementById('call-history');
         callHistoryContainer.appendChild(historyEntry);
 });
-
 
 
 
@@ -569,7 +637,7 @@ document.getElementById('railway-call-btn').addEventListener('click', function()
         historyEntry.className = "call history-class";
 
         historyEntry.innerHTML = `
-            <div class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
+            <div id="clear" class="rounded-[8px] p-4 mb-3 flex justify-between items-center bg-[#fafafa]">
                 <div>
                     <h3 class="inter font-semibold">${railwayTitle}</h3>
                     <p class="hind-madurai-regular text-[#5C5C5C]">${railwayNumber}</p>
@@ -579,4 +647,14 @@ document.getElementById('railway-call-btn').addEventListener('click', function()
             `;
         const callHistoryContainer = document.getElementById('call-history');
         callHistoryContainer.appendChild(historyEntry);
+});
+
+//clear-btn
+document.getElementById('clear-btn').addEventListener('click', function(){
+    const callHistoryContainer = document.getElementById('call-history');
+
+    while (callHistoryContainer.children.length > 1) {
+        callHistoryContainer.removeChild(callHistoryContainer.lastChild);
+    }
+
 });
